@@ -10,31 +10,31 @@ const rename = require("gulp-rename");
 //Compile, minify, autoprefix and create sourcemaps of css/scss files automatically
 function styles() {
     return (
-        gulp.src("wordpress/wp-content/themes/tempshop-theme/css/*.scss", "wordpress/wp-content/themes/tempshop-theme/css/*.css")
+        gulp.src("wordpress/wp-content/themes/tempshop-theme/assets/css/*.scss", "wordpress/wp-content/themes/tempshop-theme/assets/css/*.css")
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(postcss([autoprefixer(), cssnano()]))
             .pipe(sourcemaps.write("."))
-            .pipe(gulp.dest("wordpress/wp-content/themes/tempshop-theme/css"))
+            .pipe(gulp.dest("wordpress/wp-content/themes/tempshop-theme/assets/css"))
     );
 }
 
 //Minify and rename js files automatically
 function js() {
     return (
-        gulp.src(["wordpress/wp-content/themes/tempshop-theme/js/*.js", "wordpress/wp-content/themes/tempshop-theme/!js/*min.js"])
+        gulp.src(["wordpress/wp-content/themes/tempshop-theme/assets/js/*.js", "wordpress/wp-content/themes/tempshop-theme/assets/!js/*min.js"])
             .pipe(terser())
             .pipe(rename({
                 suffix: ".min"
             }))
-            .pipe(gulp.dest("wordpress/wp-content/themes/tempshop-theme/js"))
+            .pipe(gulp.dest("wordpress/wp-content/themes/tempshop-theme/assets/js"))
     );
 }
 
 //Continually watch css and js folders for changes, and run above functions
 function watch() {
-    gulp.watch("wordpress/wp-content/themes/tempshop-theme/css/*.scss", styles);
-    gulp.watch(["wordpress/wp-content/themes/tempshop-theme/js/*.js", "!wordpress/wp-content/themes/tempshop-theme/js/*.min.js"], js);
+    gulp.watch("wordpress/wp-content/themes/tempshop-theme/assets/css/*.scss", styles);
+    gulp.watch(["wordpress/wp-content/themes/tempshop-theme/assets/js/*.js", "!wordpress/wp-content/themes/tempshop-theme/assets/js/*.min.js"], js);
 }
 
 //Run the above functions on project creation, to ensure existence of files
