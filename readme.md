@@ -1,0 +1,1 @@
+This is a git repo for edumacation.<br>Inside you will find a webshop.<br>Presumably.
