@@ -17,7 +17,8 @@ function tempshop__menus(){
 
     $locations = array(
         'primary' => "Header menu",
-        'footer' => "Footer categories"
+        'footer' => "Footer categories",
+        'some' => "Social Media"
     );
 
     register_nav_menus($locations);

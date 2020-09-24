@@ -1,6 +1,57 @@
 // ---Credit will be given in comments if borrowed code appears---
 
+footer{
+  background-color: $primaryAlt1;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 
+  .footer__contact p{
+    margin: 0;
+  }
+}
+
+.menu{
+
+  &__footer{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+      list-style-type: none;
+
+      a{
+        display: block;
+        padding: .25rem 1rem;
+        color: $primary;
+        font-size: 1.07rem;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  &__some{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+      list-style-type: none;
+
+      a{
+        display: block;
+        padding: .25rem 1rem;
+        color: $primary;
+        font-size: 1.07rem;
+        font-weight: bold;
+      }
+    }
+
+  }
+}
 
 
 
